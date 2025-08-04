@@ -1,7 +1,3 @@
-ingress:
-  enabled: true
-  hostname: hostaway.lan
-  ingressClassName: "nginx"
 tls:
   enabled: false
 serverBlock: |-
