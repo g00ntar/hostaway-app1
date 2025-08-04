@@ -1,0 +1,19 @@
+ingress:
+  enabled: true
+  hostname: hostaway.lan
+  ingressClassName: "nginx"
+tls:
+  enabled: false
+serverBlock: |-
+  server {
+    listen 0.0.0.0:8080;
+    server_name _;
+    location / {
+      add_header Content-Type text/plain;
+      return 200 "hello it's me";
+    }
+    location /html {
+      add_header Content-Type text/plain;
+      return 200 "<html><body><h1>hello it's me</h1></body></html>";
+    }
+  }
